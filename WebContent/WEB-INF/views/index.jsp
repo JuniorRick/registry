@@ -17,7 +17,7 @@
 	<div class="container-fluid">
 		<div class="flex-box pt-3">
 			<c:forEach items="${sections}" var="section">
-					<a href="#" class="tile"> 
+					<a href="section" class="tile"> 
 						<span>${section.name }</span>
 					</a>
 			</c:forEach>

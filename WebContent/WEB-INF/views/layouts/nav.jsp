@@ -10,7 +10,6 @@
 	rel="stylesheet">
 
 
-
 <nav class="navbar navbar-expand-lg nav-top">
 	<a class="navbar-brand" href="#"> <img
 		src="<c:url value="/resources/images/IMSP_CRDM.png" />"
@@ -19,7 +18,7 @@
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarColor03" aria-controls="navbarColor03"
 		aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
+		<i class="fa fa-bars"></i>
 	</button>
 
 	<div class="collapse navbar-collapse" id="navbarColor03">
