@@ -22,6 +22,36 @@
 
 	<div class="container-fluid ">
 
+		<div class="row bg-white">
+			<div class="col">
+				<div class="col-box">
+					<label for="pacient">Pacient:</label><br> <input type="text"
+						class="form-control" id="name" placeholder="Nume, Prenume" />
+				</div>
+				<div class="col-box">
+					<label for="pacient">Tel:</label> <br> <input type="text"
+						class="form-control" id="tel" placeholder="0xxxxxxxx" />
+				</div>
+			</div>
+			<div class="col">
+				<div class="col-box float-right">
+					<label for="">Filtru:</label><br> <select class="selectpicker">
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Barbecue</option>
+					</select>
+				</div>
+				<div class="col-box float-right">
+					<label for="">Filtru:</label><br> <select class="selectpicker">
+						<option>Mustard</option>
+						<option>Ketchup</option>
+						<option>Barbecue</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+
 		<div class="row">
 			<div class="col" style="max-width: 300px">
 				<div class="row ">
@@ -37,31 +67,6 @@
 								<input type="text" id="datepicker2" disabled>
 							</div>
 						</div>
-
-						<div class="row">
-							<div class="col">
-								<div class="col-box">
-									<h4 class="text-center mt-3">Filtre</h4>
-								</div>
-								<div class="col-box">
-									<label for="">Doctor:</label><br> 
-									<select class="selectpicker w-100">
-										<option>Mustard</option>
-										<option>Ketchup</option>
-										<option>Barbecue</option>
-									</select>
-								</div>
-								<div class="col-box">
-									<label for="">Investigație:</label><br> 
-									<select	class="selectpicker w-100">
-										<option>Mustard</option>
-										<option>Ketchup</option>
-										<option>Barbecue</option>
-									</select>
-								</div>
-							</div>
-						</div>
-
 					</div>
 				</div>
 

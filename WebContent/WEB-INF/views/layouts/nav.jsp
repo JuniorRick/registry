@@ -24,18 +24,23 @@
 	<div class="collapse navbar-collapse" id="navbarColor03">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item" id="home-link"><a class="nav-link"
-				href="${pageContext.request.contextPath}/">Home<span class="sr-only">(current)</span></a></li>
+				href="${pageContext.request.contextPath}/">Acasă<span
+					class="sr-only">(current)</span></a></li>
 
-
+			
+			<li class="nav-item" id="new-release-link"><a class="nav-link"
+				href="${pageContext.request.contextPath}/investigations">Investigații</a></li>
 
 			<li class="nav-item" id="new-release-link"><a class="nav-link"
-				href="${pageContext.request.contextPath}/sections">Sections</a></li>
+				href="${pageContext.request.contextPath}/doctors">Doctori</a></li>
+
+			<li class="nav-item" id="new-release-link"><a class="nav-link"
+				href="${pageContext.request.contextPath}/sections">Secții</a></li>
 
 		</ul>
 
 		<form class="form-inline ">
-			<input class="form-control mr-sm-2"
-				placeholder="Search"
+			<input class="form-control mr-sm-2" placeholder="Search"
 				aria-label="Search" type="search" id="search">
 			<!-- 			<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button> -->
 		</form>

@@ -9,12 +9,27 @@ body {
 	justify-content: center;
 }
 
+.bg-white {
+	background-color: #729fcf;	
+	margin: 10px;
+	padding: 10px;
+}
+
+#datepicker2 {
+	width: 270px;
+}
+
+.col-box {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
 .tile {
 	width: 400px;
 	height: 150px;
 	display: flex;
 	box-sizing: border-box;
-	background: #5ab28d;
+	background: #204a87;
 	padding: 20px;
 	margin: 3px;
 	text-decoration: none;
@@ -26,7 +41,7 @@ body {
 }
 
 .tile:hover {
-	background: #4e9a06;
+	background: #729fcf;
 	color: #fff;
 	text-decoration: none;
 }
@@ -65,7 +80,7 @@ body {
 }
 /* navigation menu styles */
 .nav-top {
-	background-color: #679f9d;
+	background-color: #3465a4;
 }
 
 .nav-top a {
@@ -79,12 +94,12 @@ body {
 /* buttons style */
 .btn-primary {
 	background-color: #137c5c;
-	bpurchase: 1px solid #137c5c;
+	border: 1px solid #137c5c;
 }
 
 .btn-warning {
 	background-color: #669fa1;
-	bpurchase: 1px solid #669fa1;
+	border: 1px solid #669fa1;
 	color: #fff
 }
 
@@ -96,7 +111,7 @@ body {
 
 /* tables style */
 table>thead {
-	background-color: #679f9d !important;
+	background-color: #3465a4 !important;
 }
 
 td {
