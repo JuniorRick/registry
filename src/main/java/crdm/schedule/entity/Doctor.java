@@ -1,9 +1,11 @@
 package crdm.schedule.entity;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,10 +24,10 @@ public class Doctor {
 
 	private String name;
 
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "doctor_investigation", joinColumns = { @JoinColumn(name = "doctor_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "investigation_id") })
-	private Set<Investigation> investigations = new HashSet<>();
+	private List<Investigation> investigations = new ArrayList<>();
 
 	public Integer getId() {
 		return id;
@@ -43,11 +45,11 @@ public class Doctor {
 		this.name = name;
 	}
 
-	public Set<Investigation> getInvestigations() {
+	public List<Investigation> getInvestigations() {
 		return investigations;
 	}
 
-	public void setInvestigations(Set<Investigation> investigations) {
+	public void setInvestigations(List<Investigation> investigations) {
 		this.investigations = investigations;
 	}
 

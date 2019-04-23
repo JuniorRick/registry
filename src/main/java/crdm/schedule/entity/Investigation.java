@@ -21,7 +21,7 @@ public class Investigation {
 	@ManyToOne
 	@JoinColumn(name = "section_id", nullable = false)
 	private Section section;
-
+	
 	public Integer getId() {
 		return id;
 	}

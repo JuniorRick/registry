@@ -1,9 +1,11 @@
 package crdm.schedule.entity;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,8 +22,8 @@ public class Section {
 
 	private String name;
 
-	@OneToMany(mappedBy="section")
-	private Set<Investigation> investigations = new HashSet<>();
+	@OneToMany(mappedBy="section", fetch=FetchType.EAGER)
+	private List<Investigation> investigations = new ArrayList<>();
 	
 	public Section() {
 	}
@@ -46,11 +48,11 @@ public class Section {
 		this.name = name;
 	}
 
-	public Set<Investigation> getInvestigations() {
+	public List<Investigation> getInvestigations() {
 		return investigations;
 	}
 
-	public void setInvestigations(Set<Investigation> investigations) {
+	public void setInvestigations(List<Investigation> investigations) {
 		this.investigations = investigations;
 	}
 
