@@ -1,6 +1,5 @@
 package crdm.schedule.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -24,11 +23,12 @@ public class Doctor {
 
 	private String name;
 
+	
 	@ManyToMany(fetch=FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "doctor_investigation", joinColumns = { @JoinColumn(name = "doctor_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "investigation_id") })
-	private List<Investigation> investigations = new ArrayList<>();
-
+	private List<Investigation> investigations;
+	
 	public Integer getId() {
 		return id;
 	}

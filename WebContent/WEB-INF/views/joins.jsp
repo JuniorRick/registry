@@ -90,11 +90,13 @@
 									<th class="custom-action-width" scope="row">${loop.index + 1}</th>
 									<td>${investigation.name}</td>
 									<c:set var="contains" value="false" />
+									
 									<c:forEach var="item" items="${doctor.investigations}">
 									  <c:if test="${item.id eq investigation.id}">
 									    <c:set var="contains" value="true" />
 									  </c:if>
 									</c:forEach>
+									
 									<td class="custom-action-width">
 										<button class="btn btn-sm toggle-investigation ${ contains ? 'btn-warning' : 'btn-primary' }"
 											data-id = "${investigation.id}">

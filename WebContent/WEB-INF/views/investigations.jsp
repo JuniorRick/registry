@@ -42,7 +42,7 @@
 							<label class="col-sm-2 col-form-label" for="">Investigație</label>
 							<div class="col-sm-6">
 								<form:input path="name" class="form-control"
-									placeholder="Section name" required="required" />
+									placeholder="Denumire Investigație" required="required" />
 							</div>
 
 						</div>

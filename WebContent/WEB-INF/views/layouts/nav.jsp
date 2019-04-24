@@ -39,6 +39,9 @@
 			
 			<li class="nav-item" id="new-release-link"><a class="nav-link"
 				href="${pageContext.request.contextPath}/joins">Relații</a></li>
+				
+						<li class="nav-item" id="new-release-link"><a class="nav-link"
+				href="${pageContext.request.contextPath}/timetable">Orar</a></li>
 
 		</ul>
 

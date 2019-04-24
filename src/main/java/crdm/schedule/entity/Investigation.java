@@ -1,12 +1,18 @@
 package crdm.schedule.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name = "investigations")
@@ -19,8 +25,13 @@ public class Investigation {
 	private String name;
 
 	@ManyToOne
-	@JoinColumn(name = "section_id", nullable = false)
+	@JoinColumn(name = "section_id")
 	private Section section;
+	
+	
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@ManyToMany(mappedBy = "investigations")
+	private List<Doctor> doctors;
 	
 	public Integer getId() {
 		return id;
@@ -46,4 +57,13 @@ public class Investigation {
 		this.section = section;
 	}
 
+	public List<Doctor> getDoctors() {
+		return doctors;
+	}
+
+	public void setDoctors(List<Doctor> doctors) {
+		this.doctors = doctors;
+	}
+
+	
 }

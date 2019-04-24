@@ -2,16 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <!DOCTYPE html>
 <html>
 <head>
 <jsp:include page="/WEB-INF/views/layouts/header.jsp" />
 
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
 <title>sections</title>
 </head>
 <body>
@@ -79,80 +78,22 @@
 							<th scope="col"></th>
 						</tr>
 					</thead>
-
 					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>10/12/2019</td>
-							<td>10:30</td>
-							<td>Plesca Gavril</td>
-							<td>Doplex vase</td>
-							<td>Consultativa</td>
-							<td><button class="btn btn-primary">Programare</button></td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>10/12/2019</td>
-							<td>10:30</td>
-							<td>Plesca Gavril</td>
-							<td>Doplex vase</td>
-							<td>Consultativa</td>
-							<td><button class="btn btn-primary">Programare</button></td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>10/12/2019</td>
-							<td>10:30</td>
-							<td>Plesca Gavril</td>
-							<td>Doplex vase</td>
-							<td>Consultativa</td>
-							<td><button class="btn btn-primary">Programare</button></td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>10/12/2019</td>
-							<td>10:30</td>
-							<td>Plesca Gavril</td>
-							<td>Doplex vase</td>
-							<td>Consultativa</td>
-							<td><button class="btn btn-primary">Programare</button></td>
-						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td>10/12/2019</td>
-							<td>10:30</td>
-							<td>Plesca Gavril</td>
-							<td>Doplex vase</td>
-							<td>Consultativa</td>
-							<td><button class="btn btn-primary">Programare</button></td>
-						</tr>
-						<tr>
-							<th scope="row">3</th>
-							<td>10/12/2019</td>
-							<td>10:30</td>
-							<td>Plesca Gavril</td>
-							<td>Doplex vase</td>
-							<td>Consultativa</td>
-							<td><button class="btn btn-primary">Programare</button></td>
-						</tr>
-						<tr>
-							<th scope="row">4</th>
-							<td>10/12/2019</td>
-							<td>10:30</td>
-							<td>Plesca Gavril</td>
-							<td>Doplex vase</td>
-							<td>Consultativa</td>
-							<td><button class="btn btn-primary">Programare</button></td>
-						</tr>
-						<tr>
-							<th scope="row">5</th>
-							<td>10/12/2019</td>
-							<td>10:30</td>
-							<td>Plesca Gavril</td>
-							<td>Doplex vase</td>
-							<td>Consultativa</td>
-							<td><button class="btn btn-primary">Programare</button></td>
-						</tr>
+						<c:forEach items="${doctors}" var="doctor">
+							<c:forEach items="${doctor.investigations}" var="investigation">
+							<c:if test="${investigation.section.name == section.name}">
+								<tr>
+									<td></td>
+									<td><fmt:formatDate value="${now}" pattern="dd-MM-yyyy" /> ${now }</td>
+									<td><fmt:formatDate value="${now}" pattern="HH:mm:ss" /> ${now } </td>
+									<td>${doctor.name}</td>
+									<td>${investigation.name}</td>
+									<td>${investigation.section.name}</td>
+									
+								</tr>							
+							</c:if>
+							</c:forEach>
+						</c:forEach>						
 					</tbody>
 
 				</table>
@@ -165,9 +106,7 @@
 	<jsp:include page="/WEB-INF/views/layouts/footer.jsp" />
 
 
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
 	<script>
 		/** Days to be disabled as an array */
 		var disableddates = [ "4-3-2019", "4-11-2019", "4-25-2019", "4-20-2019" ];

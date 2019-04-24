@@ -1,6 +1,5 @@
 package crdm.schedule.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 @Table(name = "sections")
 public class Section {
@@ -22,8 +24,9 @@ public class Section {
 
 	private String name;
 
-	@OneToMany(mappedBy="section", fetch=FetchType.EAGER)
-	private List<Investigation> investigations = new ArrayList<>();
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany(mappedBy="section", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Investigation> investigations;
 	
 	public Section() {
 	}

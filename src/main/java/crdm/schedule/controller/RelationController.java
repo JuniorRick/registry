@@ -1,7 +1,6 @@
 package crdm.schedule.controller;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,7 +35,6 @@ public class RelationController {
 	@Autowired
 	private InvestigationService investigationService;
 	
-	private Section section;
 	private Doctor doctor;
 	
 	@GetMapping("")
@@ -49,12 +47,12 @@ public class RelationController {
 		List<Investigation> investigations = new ArrayList<>();
 		
 		if (section != null && doctor != null) {
-			this.section = section;
 			this.doctor = doctor;
 			
 			investigations = section.getInvestigations();
 			model.addAttribute("investigations", investigations);
 			model.addAttribute("doctor", doctor);
+			
 		}
 
 		model.addAttribute("sections", sections);
@@ -89,11 +87,9 @@ public class RelationController {
 		if(index >= 0) {
 			investigations.remove(index);
 			returnString = "removed";
-			System.out.println(returnString);
 		} else {
 			investigations.add(investigation);
 			returnString = "added";
-			System.out.println(returnString);
 		}
 		System.out.println(investigations.size());
 		doctor.setInvestigations(investigations);
