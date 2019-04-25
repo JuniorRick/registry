@@ -13,6 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "doctors")
 public class Doctor {
@@ -23,7 +25,7 @@ public class Doctor {
 
 	private String name;
 
-	
+	@JsonIgnore
 	@ManyToMany(fetch=FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "doctor_investigation", joinColumns = { @JoinColumn(name = "doctor_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "investigation_id") })
@@ -53,4 +55,5 @@ public class Doctor {
 		this.investigations = investigations;
 	}
 
+	
 }

@@ -11,35 +11,27 @@ body {
 	margin: 2px;
 	background-color: #729fcf;
 	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	cursor: pointer;
 }
 
-.hour-box::after {
+.hour-box:hover::after {
 	content: '';
 	display:block;
 	margin-top: -40px;
 	margin-left: 10px;
 	width: 80px;
 	height: 10px;
-	background-color: rgba(255,255,255,0.3);
+	background-color: rgba(255,255,255,0.5);
 }
 
-
-.change-color {
+.remove-time {
 	background-color: #cc0000;
 	color: #fff;
 }
 
-.change-color::after {
-	content: '';
-	display: block;
-	margin-top: -65px;
-	margin-left: 45px;
-	width: 10px;
-	height: 60px;
-	background-color: rgba(255,255,255,0.3);
-}
-
-.change-color::before {
+.remove-time:hover::before {
 	content: '';
 	position: absolute;
 	display:block;
@@ -47,8 +39,21 @@ body {
 	margin-left: 10px;
 	width: 80px;
 	height: 10px;
-	background-color: rgba(255,255,255,0.3);
+	background-color: rgba(255,255,255,0.5);;
 }
+
+.remove-time:hover::after {
+	content: '';
+	display: block;
+	margin-top: -65px;
+	margin-left: 45px;
+	width: 10px;
+	height: 60px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+
+
 
 .flex-box {
 	display: flex;

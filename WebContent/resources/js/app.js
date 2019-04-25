@@ -4,6 +4,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
     };
 });
 
+$('select').val('NONE');
 
 var allRows = $("tr");
 $("input#search").on("keydown keyup", function() {

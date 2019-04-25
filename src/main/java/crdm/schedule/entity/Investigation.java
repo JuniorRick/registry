@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "investigations")
 public class Investigation {
@@ -28,7 +30,7 @@ public class Investigation {
 	@JoinColumn(name = "section_id")
 	private Section section;
 	
-	
+	@JsonIgnore
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@ManyToMany(mappedBy = "investigations")
 	private List<Doctor> doctors;

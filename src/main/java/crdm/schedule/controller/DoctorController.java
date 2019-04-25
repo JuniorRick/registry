@@ -8,12 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import crdm.schedule.entity.Doctor;
+import crdm.schedule.entity.Investigation;
 import crdm.schedule.service.DoctorService;
 
 @Controller
@@ -62,6 +65,14 @@ public class DoctorController {
 		doctorService.delete(id);
 		
 		return "redirect:/doctors";
+	}
+	
+	@GetMapping("/{id}/investigations")
+	@ResponseBody
+	public List<Investigation> timeTable(@PathVariable(name="id") Integer id) {
+		
+		List<Investigation> investigations = doctorService.find(id).getInvestigations();
+		return investigations;
 	}
 	
 }
